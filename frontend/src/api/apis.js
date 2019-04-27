@@ -1,4 +1,4 @@
-import {generalAxios} from './axios.js'
+import { HttpRequest } from './axios.js'
 
 export const api = {
   resHandle(res, target, failType) {
@@ -18,7 +18,7 @@ export const api = {
     })
   },
   getImg(data) {
-    return generalAxios({
+    return HttpRequest({
       url: "/test_count",
       method: "post",
       data: data
