@@ -1,3 +1,4 @@
+console.log(Plugin, '111')
 import Vue from 'vue'
 import './plugins/axios'
 import App from './App.vue'
