@@ -9,7 +9,7 @@ module.exports = {
   // baseUrl: BASE_URL,
   // publicPath: PUBLICPATH,
   devServer: {
-    port: 8000
+    port: 19050
     // 代理
     // proxy: 'http://localhost:2222'
   },

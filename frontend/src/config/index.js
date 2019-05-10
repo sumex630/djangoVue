@@ -2,5 +2,5 @@
 import {baseUrl} from './url.js'
 
 export default {
-  baseUrl: baseUrl
+	baseUrl:baseUrl,
 }

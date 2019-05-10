@@ -5,7 +5,7 @@ from rest_framework.views import APIView
 
 
 # Create your views here.
-class TestCount(APIView):
+class plus_test(APIView):
     """测试前后端交互"""
     def post(self, request, *args, **kwargs):
         print("======", request.POST.get('count', 0))

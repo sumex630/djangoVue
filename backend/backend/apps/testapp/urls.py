@@ -9,5 +9,5 @@ from django.urls import path
 from testapp import views
 
 urlpatterns = [
-    path(r'test_count', views.TestCount.as_view())
+    path(r'plus', views.plus_test.as_view())
 ]

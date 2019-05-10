@@ -26,7 +26,8 @@ SECRET_KEY = 'i#*czix*!vysfv%%zle-lkgd7p)=n)@1-*mfd068v**0ackbb^'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-# ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+# 跨域请求允许
+ALLOWED_HOSTS = '*'
 
 # Application definition
 
@@ -134,5 +135,6 @@ STATIC_URL = '/static/'
 CORS_ORIGIN_WHITELIST = (
     '127.0.0.1:8080',
     'localhost:8080',
+    '192.168.11.231:19999',
 )
 
