@@ -1,16 +1,16 @@
-const About = () => import('.././views/About.vue')
-const Home = () => import('.././views/Home.vue')
+const Home = () => import('@/views/Home.vue')
+const Index = () => import('@/views/Index.vue')
 
 const routes = [
   {
-    path: '/',
+    path: '/home',
     name: 'home',
     component: Home
   },
   {
-    path: '/about',
-    name: 'about',
-    component: About
+    path: '/',
+    name: 'Index',
+    component: Index
   }
 ]
 
