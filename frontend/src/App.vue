@@ -5,12 +5,9 @@
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
   name: 'app',
   components: {
-    HelloWorld
   }
 
 }
@@ -23,8 +20,9 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 0px;
 }
+
 .cpt-parent {
   .out-wrap {
     padding: 20px;
@@ -35,24 +33,8 @@ export default {
   .el-col {
     border-radius: 4px;
   }
-  .bg-purple {
-    background: #d3dce6;
-  }
-  .grid-content {
-    border-radius: 4px;
-    padding: 20px;
-    min-height: 390px;
-  }
-  .grid-title {
-    background: #2c3e50;
-    border-radius: 4px;
-    min-height: 35px;
-    color: #d3dce6;
-    font-size: 16px;
-    font-weight: 600;
-    display:flex;
-    justify-content:center;
-    align-items:center
+  .el-card {
+    background: #f2f2f2
   }
 }
 </style>

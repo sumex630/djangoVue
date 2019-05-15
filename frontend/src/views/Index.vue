@@ -3,82 +3,37 @@
     <div class="out-wrap">
       <el-row :gutter="20" type="flex">
         <el-col :span="8">
-          <div class="bg-purple">
-            <div class="grid-title">e-line-bar</div>
-            <div class="grid-content">
-              <e-line-bar></e-line-bar>
-            </div>
-          </div>
+          <el-card><e-line-bar></e-line-bar></el-card>
         </el-col>
         <el-col :span="8">
-          <div class="bg-purple">
-            <div class="grid-title">e-line-bar</div>
-            <div class="grid-content">
-              <e-line-bar></e-line-bar>
-            </div>
-          </div>
+          <el-card><e-line-bar></e-line-bar></el-card>
         </el-col>
         <el-col :span="8">
-          <div class="bg-purple">
-            <div class="grid-title">e-line-bar</div>
-            <div class="grid-content">
-              <e-line-bar></e-line-bar>
-            </div>
-          </div>
+          <el-card><e-line-bar></e-line-bar></el-card>
         </el-col>
        
       </el-row>
       <el-row :gutter="20" type="flex">
         <el-col :span="8">
-          <div class="bg-purple">
-            <div class="grid-title">e-line-bar</div>
-            <div class="grid-content">
-              <e-line-bar></e-line-bar>
-            </div>
-          </div>
+          <el-card><e-line-bar></e-line-bar></el-card>
         </el-col>
         <el-col :span="8">
-          <div class="bg-purple">
-            <div class="grid-title">e-line-bar</div>
-            <div class="grid-content">
-              <e-line-bar></e-line-bar>
-            </div>
-          </div>
+          <el-card><e-line-bar></e-line-bar></el-card>
         </el-col>
         <el-col :span="8">
-          <div class="bg-purple">
-            <div class="grid-title">e-line-bar</div>
-            <div class="grid-content">
-              <e-line-bar></e-line-bar>
-            </div>
-          </div>
+          <el-card><e-line-bar></e-line-bar></el-card>
         </el-col>
        
       </el-row>
       <el-row :gutter="20" type="flex">
         <el-col :span="8">
-          <div class="bg-purple">
-            <div class="grid-title">e-line-bar</div>
-            <div class="grid-content">
-              <e-line-bar></e-line-bar>
-            </div>
-          </div>
+          <el-card><e-line-bar></e-line-bar></el-card>
         </el-col>
         <el-col :span="8">
-          <div class="bg-purple">
-            <div class="grid-title">e-line-bar</div>
-            <div class="grid-content">
-              <e-line-bar></e-line-bar>
-            </div>
-          </div>
+          <el-card><e-line-bar></e-line-bar></el-card>
         </el-col>
         <el-col :span="8">
-          <div class="bg-purple">
-            <div class="grid-title">e-line-bar</div>
-            <div class="grid-content">
-              <e-line-bar></e-line-bar>
-            </div>
-          </div>
+          <el-card><e-line-bar></e-line-bar></el-card>
         </el-col>
        
       </el-row>
