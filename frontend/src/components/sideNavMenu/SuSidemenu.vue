@@ -11,19 +11,18 @@
       background-color="#fff"
       text-color="#000"
       active-text-color="#409EFF"
-      @select="handleSelect"
+      @on-select="handleSelect"
     >
-      <div class="logo"></div>
       <template v-for="item in menuList">
         <su-submenu
           v-if="item.children"
-          :key="`menu_${item.name}`"
+          :key="`menu_${item.title}`"
           :index="item.path"
           :parent="item"
         ></su-submenu>
-        <el-menu-item v-else :key="`menu_${item.name}`" :index="item.path">
+        <el-menu-item v-else :key="`menu_${item.title}`" :index="item.path">
           <!-- <Icon :type="item.icon"/> -->
-          {{ item.meta.title }}
+          {{ item.title }}
         </el-menu-item>
       </template>
     </el-menu>
@@ -55,18 +54,12 @@ export default {
   data() {
     return {};
   },
-  computed: {
-    route(){
-      return this.$route
-    }
-  },
+  computed: {},
   //监控data中的数据变化
   watch: {},
   //方法集合
   methods: {
-    handleSelect(e) {
-      console.log('select', e);
-    }
+    handleSelect() {}
   },
   created() {},
   mounted() {},
@@ -83,17 +76,11 @@ export default {
 <style lang='scss' scoped>
 .el-menu-horizontal {
   position: fixed;
-  width: 100%;
-  padding: 0 30px;
+  width: 200px;
+  height: 100%;
+  overflow-y: auto;
+  text-align: left;
   z-index: 100;
   box-shadow:0px 1px 4px 0px rgba(0,21,41,0.12);
-  .logo{
-    float:left;
-    margin-right: 30%;
-    margin-left: 1%;
-    height: 60px;
-    display: flex;
-    align-items: center;
-  }
 }
 </style>

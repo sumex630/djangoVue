@@ -2,18 +2,18 @@
   <el-submenu :index="parent.path">
     <template slot="title">
       <!-- <Icon :type="parent.icon"/> -->
-      {{ parent.meta.title }}
+      {{ parent.title }}
     </template>
     <template v-for="item in parent.children">
       <su-submenu
         v-if="item.children"
-        :key="`menu_${item.name}`"
+        :key="`menu_${item.title}`"
         :index="`${parent.path}/${item.path}`"
         :parent="item"
       ></su-submenu>
-      <el-menu-item v-else :key="`menu_${item.name}`" :index="`${parent.path}/${item.path}`">
+      <el-menu-item v-else :key="`menu_${item.title}`" :index="`${parent.path}/${item.path}`">
         <!-- <Icon :type="item.icon"/> -->
-        {{ item.meta.title }}
+        {{ item.title }}
       </el-menu-item>
     </template>
   </el-submenu>
