@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'testapp.apps.TestappConfig',  # 注册应用（应用名.apps.apps中的class）
+    'users.apps.UsersConfig',
 ]
 
 MIDDLEWARE = [
