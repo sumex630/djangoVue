@@ -191,7 +191,7 @@ LOGGING = {
 
 REST_FRAMEWORK = {
     # 异常处理
-    'EXCEPTION_HANDLER': 'meiduo_mall.utils.exceptions.exception_handler',
+    'EXCEPTION_HANDLER': 'backend.utils.exceptions.exception_handler',
     # 认证机制
     'DEFAULT_AUTHENTICATION_CLASSES': (
         # 添加JWT认证机制 401: 未认证
