@@ -5,7 +5,7 @@
       <sourceFolder url="file://$MODULE_DIR$/backend/backend/apps" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/backend/backend" isTestSource="false" />
     </content>
-    <orderEntry type="inheritedJdk" />
+    <orderEntry type="jdk" jdkName="Python 3.5 (django_py3)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
   <component name="TestRunnerService">
