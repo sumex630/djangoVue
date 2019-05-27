@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="391355d9-ac8a-4a0d-ae73-4cc19c954ba2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/backend/backend/settings/dev.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/backend/settings/dev.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -12,23 +13,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/backend/backend/apps/testapp/tests.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="72">
               <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/backend/backend/settings/dev.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="897">
-              <caret line="194" column="10" lean-forward="true" selection-start-line="194" selection-start-column="10" selection-end-line="194" selection-end-column="10" />
-              <folding>
-                <element signature="e#306#315#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -164,17 +153,6 @@
               <item name="djangoVue" type="b2602c69:ProjectViewProjectNode" />
               <item name="djangoVue" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="djangoVue" type="b2602c69:ProjectViewProjectNode" />
-              <item name="djangoVue" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="djangoVue" type="b2602c69:ProjectViewProjectNode" />
-              <item name="djangoVue" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -189,6 +167,11 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\project\frontback\djangoVue" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -242,12 +225,12 @@
       <option name="presentableId" value="Default" />
       <updated>1557473857112</updated>
       <workItem from="1557473859496" duration="9098000" />
-      <workItem from="1558795645715" duration="1593000" />
+      <workItem from="1558795645715" duration="5460000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11434000" />
+    <option name="totallyTimeSpent" value="15301000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="2575" height="1415" extended-state="6" />
@@ -267,7 +250,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.1661442" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.33749026" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.2548714" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -449,13 +432,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/backend/apps/testapp/tests.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/backend/backend/scripts/exceptions.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="504">
@@ -475,11 +451,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/backend/backend/settings/dev.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="897">
-          <caret line="194" column="10" lean-forward="true" selection-start-line="194" selection-start-column="10" selection-end-line="194" selection-end-column="10" />
+        <state relative-caret-position="266">
+          <caret line="181" column="1" lean-forward="true" selection-start-line="181" selection-start-column="1" selection-end-line="181" selection-end-column="1" />
           <folding>
             <element signature="e#306#315#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/backend/apps/testapp/admin.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1206" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/backend/apps/testapp/tests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
         </state>
       </provider>
     </entry>
