@@ -1,9 +1,16 @@
 const Home = () => import('@/views/Home.vue')
+const Test = () => import('@/views/Test.vue')
 const Index = () => import('@/views/Index.vue')
 const mainMenu = () => import('@/views/mainMenu.vue')
 const sideMenu = () => import('@/views/sideMenu.vue')
 
 const routes = [{
+  path: '/test',
+  name: 'test',
+  component: Test,
+  meta: {
+    title: '测试',
+  },
   path: '/',
   name: 'mainMenu',
   redirect: '/index',
