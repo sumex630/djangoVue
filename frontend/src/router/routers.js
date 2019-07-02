@@ -4,21 +4,24 @@ const Index = () => import('@/views/Index.vue')
 const mainMenu = () => import('@/views/mainMenu.vue')
 const sideMenu = () => import('@/views/sideMenu.vue')
 
-const routes = [{
-  path: '/test',
-  name: 'test',
-  component: Test,
-  meta: {
-    title: '测试',
+const routes = [
+  {  
+    path: '/test',
+    name: 'test',
+    component: Test,
+    meta: {
+      title: '测试',
+    }
   },
-  path: '/',
-  name: 'mainMenu',
-  redirect: '/index',
-  component: mainMenu,
-  meta: {
-    title: '导航',
-    menuClass: 'parent'
-  },
+  {
+    path: '/',
+    name: 'mainMenu',
+    redirect: '/index',
+    component: mainMenu,
+    meta: {
+      title: '导航',
+      menuClass: 'parent'
+    },
   children: [{
       path: '/index',
       name: 'index',
