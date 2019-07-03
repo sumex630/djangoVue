@@ -1,120 +1,101 @@
-const Home = () => import('@/views/Home.vue')
 const Test = () => import('@/views/Test.vue')
-const Index = () => import('@/views/Index.vue')
-const mainMenu = () => import('@/views/mainMenu.vue')
-const sideMenu = () => import('@/views/sideMenu.vue')
 
-const routes = [
-  {  
-    path: '/test',
-    name: 'test',
-    component: Test,
+const Login = () => import('@/views/Login.vue')
+const NotFound = () => import('@/views/NotFound.vue')
+
+const Home = () => import('@/views/Home.vue')
+const Index = () => import('@/views/Index.vue')
+
+const TopNav = () => import('@/components/TopNav')
+const LeftNav = () => import('@/components/LeftNav')
+const MySettings = () => import('@/views/setting/MySetting.vue')
+const Plan = () => import('@/views/setting/Plan.vue')
+
+const EnterpriseList = () => import('@/views/enterprise/EnterpriseList.vue')
+
+const routes = [{
+    path: '/login',
+    name: 'login',
+    component: Login,
     meta: {
-      title: '测试',
+      title: "登录"
     }
   },
   {
+    path: '*',
+    component: NotFound
+  },
+  {
     path: '/',
-    name: 'mainMenu',
+    name: 'home',
     redirect: '/index',
-    component: mainMenu,
+    component: Home,
     meta: {
-      title: '导航',
-      menuClass: 'parent'
+      title: "工作台",
+      isTopMenu: true,
     },
-  children: [{
-      path: '/index',
-      name: 'index',
-      meta: {
-        menuClass: 'main',
-        title: '首页'
-      },
-      component: Index
-    },
-    // {
-    //   path: '/sideMenu',
-    //   name: 'sideMenu',
-    //   component: sideMenu,
-    //   meta: {
-    //     menuClass: 'side',
-    //     title: '侧导航'
-    //   },
-    // },
-    {
-      path: '/about',
-      name: 'about',
-      component: sideMenu,
-      meta: {
-        menuClass: 'main',
-        title: '关于'
-      },
-      children: [{
-          path: 'about111/33',
-          name: 'about111',
-          component: Home,
-          meta: {
-            menuClass: 'main',
-            title: 'about1112'
-          }
+    children: [{
+        path: '/index',
+        name: 'index',
+        components: {
+          default: Index,
+          top: TopNav,
+          aside: LeftNav
         },
-        {
-          path: 'about222',
-          name: 'about222',
-          component: Home,
-          meta: {
-            title: 'about222',
-            menuClass: 'main',
-          }
-        },
-        {
-          path: 'aboutsss',
-          name: 'aboutsss',
-          component: Home,
-          meta: {
-            title: 'aboutsss',
-            menuClass: 'side',
-          },
-          children: [{
-            path: 'about222',
-            name: 'about222',
-            component: Home,
-            meta: {
-              title: 'about222',
-              menuClass: 'side',
-            }
-          }, ]
-        },
-      ]
-    },
-    {
-      path: '/home',
-      name: 'home',
-      component: sideMenu,
-      meta: {
-        menuClass: 'main',
-        title: '自由页',
-      },
-      children: [{
-        path: 'aboutsss',
-        name: 'aboutsss',
-        component: Home,
         meta: {
-          title: 'aboutsss',
-          menuClass: 'side',
+          title: "首页",
+          leaf: true, // 只有一个节点
+          iconCls: 'iconfont icon-home', // 图标样式class
+        }
+      },
+      {
+        path: '/mySet',
+        name: 'mySet',
+        components: {
+          default: MySettings,
+          top: TopNav,
+          aside: LeftNav
+        },
+        meta: {
+          iconCls: 'el-icon-menu',
+          title: "我的设置"
         },
         children: [{
-          path: 'about222',
-          name: 'about222',
-          component: Home,
+          path: 'plan',
+          component: Plan,
+          name: 'plan',
           meta: {
-            title: 'about222',
-            menuClass: 'side',
+            title: "我的计划"
           }
         }, ]
-      }, ]
+      }
+    ]
+  },
+  {
+    path: '/enterprise',
+    name: 'enterprise',
+    component: Home,
+    redirect: '/enterprise/list',
+    meta: {
+      title: "企业管理",
+      isTopMenu: true
     },
-  ]
-}, ]
+    children: [{
+      path: '/enterprise/list',
+      name: 'EnterpriseList',
+      components: {
+        default: EnterpriseList,
+        top: TopNav,
+        aside: LeftNav
+      },
+      meta: {
+        leaf: true,
+        iconCls: 'el-icon-setting',
+        title: "企业信息"
+      },
+    }]
+  }
+]
 
 export {
   routes

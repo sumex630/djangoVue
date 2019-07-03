@@ -1,6 +1,6 @@
 <template>
   <div class="index cpt-parent">
-    <div class="out-wrap">
+    <div class="">
       <el-row :gutter="20" type="flex">
         <el-col :span="8">
           <el-card><e-line-bar></e-line-bar></el-card>

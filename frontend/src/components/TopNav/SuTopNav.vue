@@ -5,7 +5,7 @@
       ref="menu"
       router
       class="el-menu-horizontal"
-      :default-active='$route.fullPath'
+      :default-active="defaultActive"
       v-show="!collapsed"
       :mode="modeSetting"
       background-color="#fff"
@@ -31,18 +31,19 @@
 </template>
 
 <script>
-import SuSubmenu from "./SuSubmenu.vue";
+import SuSubmenu from "./SuSubmenu.vue"
+import {deepCopy} from '@/lib/util'
 
 export default {
   name: "SuNavMenu",
   props: {
-    menuList: {
-      type: Array,
-      default: () => []
-    },
+    // menuList: {
+    //   type: Array,
+    //   default: () => []
+    // },
     modeSetting: {
       type: String,
-      default: ''
+      default: "horizontal"
     },
     collapsed: {
       type: Boolean,
@@ -53,11 +54,14 @@ export default {
     SuSubmenu
   },
   data() {
-    return {};
+    return {
+      menuList: [],
+      defaultActive:"/"
+    };
   },
   computed: {
-    route(){
-      return this.$route
+    route() {
+      return this.$route;
     }
   },
   //监控data中的数据变化
@@ -65,10 +69,29 @@ export default {
   //方法集合
   methods: {
     handleSelect(e) {
-      console.log('select', e);
+      console.log("select", e);
+    },
+    init() {
+      let routerList = deepCopy(this.$router.options.routes)
+      let menuList = []
+      routerList.forEach(element => {
+        let isTopMenu = element.meta && element.meta.isTopMenu
+        if(isTopMenu) {
+          delete(element.children)
+          menuList.push(element)
+        }
+      });
+      this.menuList = menuList
+      if(this.$route.matched[0].path) {
+        this.defaultActive = this.$route.matched[0].path
+      }else {
+        this.defaultActive = "/"
+      }
     }
   },
-  created() {},
+  created() {
+    this.init()
+  },
   mounted() {},
   beforeCreate() {},
   beforeMount() {},
@@ -86,9 +109,9 @@ export default {
   width: 100%;
   padding: 0 30px;
   z-index: 100;
-  box-shadow:0px 1px 4px 0px rgba(0,21,41,0.12);
-  .logo{
-    float:left;
+  box-shadow: 0px 1px 4px 0px rgba(0, 21, 41, 0.12);
+  .logo {
+    float: left;
     margin-right: 30%;
     margin-left: 1%;
     height: 60px;
