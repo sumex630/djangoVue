@@ -1,45 +1,6 @@
 <template>
   <div class="index cpt-s">
-    <div class="">
-      <el-row :gutter="20" type="flex">
-        <el-col :span="8">
-          <el-card><e-line-bar></e-line-bar></el-card>
-        </el-col>
-        <el-col :span="8">
-          <el-card><e-line-bar></e-line-bar></el-card>
-        </el-col>
-        <el-col :span="8">
-          <el-card><e-line-bar></e-line-bar></el-card>
-        </el-col>
-       
-      </el-row>
-      <el-row :gutter="20" type="flex">
-        <el-col :span="8">
-          <el-card><e-line-bar></e-line-bar></el-card>
-        </el-col>
-        <el-col :span="8">
-          <el-card><e-line-bar></e-line-bar></el-card>
-        </el-col>
-        <el-col :span="8">
-          <el-card><e-line-bar></e-line-bar></el-card>
-        </el-col>
-       
-      </el-row>
-      <el-row :gutter="20" type="flex">
-        <el-col :span="8">
-          <el-card><e-line-bar></e-line-bar></el-card>
-        </el-col>
-        <el-col :span="8">
-          <el-card><e-line-bar></e-line-bar></el-card>
-        </el-col>
-        <el-col :span="8">
-          <el-card><e-line-bar></e-line-bar></el-card>
-        </el-col>
-       
-      </el-row>
-      
-      
-    </div>
+    home
   </div>
 </template>
 
