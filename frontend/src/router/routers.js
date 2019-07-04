@@ -10,14 +10,17 @@ const TopNav = () => import('@/components/TopNav')
 const LeftNav = () => import('@/components/LeftNav')
 const MySettings = () => import('@/views/setting/MySetting.vue')
 const Plan = () => import('@/views/setting/Plan.vue')
+const Setting = () => import('@/views/setting/Setting.vue')
 
 const EnterpriseList = () => import('@/views/enterprise/EnterpriseList.vue')
+const Validate = () => import('@/views/enterprise/Validate.vue')
 
 const routes = [{
     path: '/login',
     name: 'login',
     component: Login,
     meta: {
+      icon: 'el-icon-menu',
       title: "登录"
     }
   },
@@ -31,6 +34,7 @@ const routes = [{
     redirect: '/index',
     component: Home,
     meta: {
+      icon: 'el-icon-menu',
       title: "工作台",
       isTopMenu: true,
     },
@@ -43,9 +47,9 @@ const routes = [{
           aside: LeftNav
         },
         meta: {
+          icon: 'el-icon-menu',
           title: "首页",
-          leaf: true, // 只有一个节点
-          iconCls: 'iconfont icon-home', // 图标样式class
+          icon: 'el-icon-menu', // 图标样式class
         }
       },
       {
@@ -57,7 +61,8 @@ const routes = [{
           aside: LeftNav
         },
         meta: {
-          iconCls: 'el-icon-menu',
+          icon: 'el-icon-menu',
+          icon: 'el-icon-menu',
           title: "我的设置"
         },
         children: [{
@@ -65,9 +70,20 @@ const routes = [{
           component: Plan,
           name: 'plan',
           meta: {
+            icon: 'el-icon-menu',
+            icon: 'el-icon-menu',
             title: "我的计划"
           }
-        }, ]
+        }, {
+          path: 'setting',
+          component: Setting,
+          name: 'Setting',
+          meta: {
+            icon: 'el-icon-menu',
+            icon: 'el-icon-menu',
+            title: "设置"
+          }
+        }]
       }
     ]
   },
@@ -77,6 +93,7 @@ const routes = [{
     component: Home,
     redirect: '/enterprise/list',
     meta: {
+      icon: 'el-icon-menu',
       title: "企业管理",
       isTopMenu: true
     },
@@ -89,9 +106,20 @@ const routes = [{
         aside: LeftNav
       },
       meta: {
-        leaf: true,
-        iconCls: 'el-icon-setting',
+        icon: 'el-icon-menu',
         title: "企业信息"
+      },
+    }, {
+      path: '/enterprise/validate',
+      name: 'validate',
+      components: {
+        default: Validate,
+        top: TopNav,
+        aside: LeftNav
+      },
+      meta: {
+        icon: 'el-icon-menu',
+        title: "企业认证"
       },
     }]
   }

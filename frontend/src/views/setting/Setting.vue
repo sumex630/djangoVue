@@ -1,12 +1,10 @@
 <template>
-  <div class="MySetting">
-    <router-view></router-view>
-  </div>
+  <div class="setting">Setting</div>
 </template>
 
 <script>
 export default {
-  name: "MySetting",
+  name: "setting",
   components: {},
   data() {
     return {};

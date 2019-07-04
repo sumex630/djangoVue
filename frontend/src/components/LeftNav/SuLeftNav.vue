@@ -22,7 +22,7 @@
           :parent="item"
         ></su-submenu>
         <el-menu-item v-else :key="`menu_${item.name}`" :index="item.path">
-          <!-- <Icon :type="item.icon"/> -->
+          <i :class="item.meta.icon"></i>
           {{ item.meta.title }}
         </el-menu-item>
       </template>
