@@ -1,5 +1,5 @@
 <template>
-  <div class="mainmenu-wrapper cpt-s">
+  <div class="mainmenu-wrapper cpt-s" v-if="isVisionTop">
     <el-menu
       ref="menu"
       router
@@ -11,7 +11,9 @@
       active-text-color="#409EFF"
       @select="handleSelect"
     >
-      <div class="logo"></div>
+      <div class="logo">
+        <img src="@/assets/logo.png" alt style="width: 24px; height: 24px" />
+      </div>
       <template v-for="item in menuList">
         <su-submenu
           v-if="item.children"
@@ -19,10 +21,20 @@
           :index="item.path"
           :parent="item"
         ></su-submenu>
-        <el-menu-item v-else :key="`menu_${item.name}`" :index="item.path">
-          {{ item.meta.title }}
-        </el-menu-item>
+        <el-menu-item v-else :key="`menu_${item.name}`" :index="item.path">{{ item.meta.title }}</el-menu-item>
       </template>
+      <div class="info">
+        <el-dropdown trigger="click">
+          <span class="el-dropdown-link userinfo-inner">
+            <i class="el-icon-s-custom"></i> admin
+            <i class="el-icon-caret-bottom"></i>
+          </span>
+          <el-dropdown-menu slot="dropdown">
+            <el-dropdown-item @click="handleUserInfo">个人信息</el-dropdown-item>
+            <el-dropdown-item divided @click="handleLogout">退出登录</el-dropdown-item>
+          </el-dropdown-menu>
+        </el-dropdown>
+      </div>
     </el-menu>
   </div>
 </template>
@@ -33,6 +45,12 @@ import { deepCopy } from "@/lib/util";
 
 export default {
   name: "SuNavMenu",
+  props: {
+    isVisionTop: {
+      type: Boolean,
+      default: true
+    }
+  },
   components: {
     SuSubmenu
   },
@@ -51,8 +69,9 @@ export default {
   watch: {},
   //方法集合
   methods: {
-    handleSelect(e) {
-    },
+    handleSelect(e) {},
+    handleUserInfo() {},
+    handleLogout() {},
     init() {
       let routerList = deepCopy(this.$router.options.routes);
       let menuList = [];
@@ -95,6 +114,14 @@ export default {
   .logo {
     float: left;
     margin-right: 30%;
+    margin-left: 1%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+  }
+  .info {
+    float: right;
+    margin-right: 1%;
     margin-left: 1%;
     height: 60px;
     display: flex;

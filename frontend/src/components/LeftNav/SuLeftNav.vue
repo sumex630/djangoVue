@@ -1,5 +1,5 @@
 <template>
-  <el-aside :width="asideW" :class="{showSidebar:!isCollapse}">
+  <el-aside :width="asideW" :class="{showSidebar:!isCollapse}" v-if="isVisionLeft">
     <el-menu
       ref="menu"
       router
@@ -39,6 +39,12 @@ import { deepCopy } from "@/lib/util";
 
 export default {
   name: "SuNavMenu",
+  props: {
+    isVisionLeft: {
+      type: Boolean,
+      default: true
+    }
+  },
   components: {
     SuSubmenu
   },
@@ -56,7 +62,6 @@ export default {
   //监控data中的数据变化
   watch: {
     $route(to, from) {
-      // console.log(to.path);
       this.init();
     }
   },
@@ -69,7 +74,6 @@ export default {
       let defaultActive =
         this.$route.matched[0].path == "" ? "/" : this.$route.matched[0].path; //获取当前路由
       let routers = deepCopy(this.$router.options.routes);
-      // console.log('routers', routers);
       let menuList = [];
       routers.forEach(element => {
         let isTopMenu =
@@ -78,19 +82,9 @@ export default {
           element.path == defaultActive;
         if (isTopMenu) {
           //  除导航之外的路由
-          // delete(element.children)
-          // menuList.push(element)
-          console.log("defaultActive", defaultActive);
-          console.log("element12", element.children);
           this.leftMenuList = element.children;
         }
       });
-      // this.menuList = menuList
-      // if(this.$route.matched[0].path) {
-      //   this.defaultActive = this.$route.matched[0].path
-      // }else {
-      //   this.defaultActive = "/"
-      // }
     },
     handleSelect() {}
   },
