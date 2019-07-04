@@ -1,19 +1,22 @@
 <template>
-  <div class="mainmenu-wrapper">
-    <slot></slot>
+  <el-aside :width="asideW" :class="{showSidebar:!isCollapse}">
     <el-menu
       ref="menu"
       router
       class="el-menu-horizontal"
       :default-active="$route.fullPath"
-      v-show="!collapsed"
-      :mode="modeSetting"
       :unique-opened="true"
+      :collapse="isCollapse"
       background-color="#fff"
       text-color="#000"
       active-text-color="#409EFF"
       @on-select="handleSelect"
     >
+      <!--展开折叠开关-->
+      <div class="menu-toggle" @click.prevent="handleCollapse">
+        <i class="el-icon-s-fold" v-show="!isCollapse" title="收起"></i>
+        <i class="el-icon-s-unfold" v-show="isCollapse" title="展开"></i>
+      </div>
       <template v-for="item in leftMenuList">
         <su-submenu
           v-if="item.children"
@@ -23,11 +26,11 @@
         ></su-submenu>
         <el-menu-item v-else :key="`menu_${item.name}`" :index="item.path">
           <i :class="item.meta.icon"></i>
-          {{ item.meta.title }}
+          <span slot="title">{{ item.meta.title }}</span>
         </el-menu-item>
       </template>
     </el-menu>
-  </div>
+  </el-aside>
 </template>
 
 <script>
@@ -36,38 +39,32 @@ import { deepCopy } from "@/lib/util";
 
 export default {
   name: "SuNavMenu",
-  props: {
-    // menuList: {
-    //   type: Array,
-    //   default: () => []
-    // },
-    modeSetting: {
-      type: String,
-      default: "vertical"
-    },
-    collapsed: {
-      type: Boolean,
-      default: false
-    }
-  },
   components: {
     SuSubmenu
   },
   data() {
     return {
-      leftMenuList: []
+      leftMenuList: [],
+      isCollapse: false
     };
   },
-  computed: {},
+  computed: {
+    asideW() {
+      return this.isCollapse ? '64px' : '200px'
+    }
+  },
   //监控data中的数据变化
   watch: {
     $route(to, from) {
       // console.log(to.path);
-      this.init()
+      this.init();
     }
   },
   //方法集合
   methods: {
+    handleCollapse(){
+      this.isCollapse = !this.isCollapse
+    },
     init() {
       let defaultActive =
         this.$route.matched[0].path == "" ? "/" : this.$route.matched[0].path; //获取当前路由
@@ -112,13 +109,33 @@ export default {
 };
 </script>
 <style lang='scss' scoped>
+.el-menu-horizontal:not(.el-menu--collapse) {
+  width: 200px;
+}
+.el-menu--collapse {
+  width: 64px;
+}
 .el-menu-horizontal {
   position: fixed;
-  width: 200px;
   height: 100%;
   overflow-y: auto;
   text-align: left;
   z-index: 100;
   box-shadow: 0px 1px 4px 0px rgba(0, 21, 41, 0.12);
+}
+.menu-toggle {
+  background: #4A5064;
+  text-align: center;
+  color: white;
+  height: 26px;
+  font-size: 18px;
+  line-height: 30px;
+}
+.menu-toggle:hover {
+  cursor: pointer;
+}
+.showSidebar {
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 </style>

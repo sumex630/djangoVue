@@ -4,9 +4,9 @@
       <router-view name="top"></router-view>
     </el-header>
     <el-container>
-      <el-aside width="200px">
+      <div>
         <router-view name="aside"></router-view>
-      </el-aside>
+      </div>
       <el-main>
         <router-view></router-view>
       </el-main>

@@ -1,13 +1,11 @@
 <template>
-  <div class="mainmenu-wrapper">
-    <slot></slot>
+  <div class="mainmenu-wrapper cpt-s">
     <el-menu
       ref="menu"
       router
       class="el-menu-horizontal"
       :default-active="defaultActive"
-      v-show="!collapsed"
-      :mode="modeSetting"
+      mode="horizontal"
       background-color="#fff"
       text-color="#000"
       active-text-color="#409EFF"
@@ -22,7 +20,6 @@
           :parent="item"
         ></su-submenu>
         <el-menu-item v-else :key="`menu_${item.name}`" :index="item.path">
-          <!-- <Icon :type="item.icon"/> -->
           {{ item.meta.title }}
         </el-menu-item>
       </template>
@@ -31,32 +28,18 @@
 </template>
 
 <script>
-import SuSubmenu from "./SuSubmenu.vue"
-import {deepCopy} from '@/lib/util'
+import SuSubmenu from "./SuSubmenu.vue";
+import { deepCopy } from "@/lib/util";
 
 export default {
   name: "SuNavMenu",
-  props: {
-    // menuList: {
-    //   type: Array,
-    //   default: () => []
-    // },
-    modeSetting: {
-      type: String,
-      default: "horizontal"
-    },
-    collapsed: {
-      type: Boolean,
-      default: false
-    }
-  },
   components: {
     SuSubmenu
   },
   data() {
     return {
       menuList: [],
-      defaultActive:"/"
+      defaultActive: "/"
     };
   },
   computed: {
@@ -69,28 +52,27 @@ export default {
   //方法集合
   methods: {
     handleSelect(e) {
-      console.log("select", e);
     },
     init() {
-      let routerList = deepCopy(this.$router.options.routes)
-      let menuList = []
+      let routerList = deepCopy(this.$router.options.routes);
+      let menuList = [];
       routerList.forEach(element => {
-        let isTopMenu = element.meta && element.meta.isTopMenu
-        if(isTopMenu) {
-          delete(element.children)
-          menuList.push(element)
+        let isTopMenu = element.meta && element.meta.isTopMenu;
+        if (isTopMenu) {
+          delete element.children;
+          menuList.push(element);
         }
       });
-      this.menuList = menuList
-      if(this.$route.matched[0].path) {
-        this.defaultActive = this.$route.matched[0].path
-      }else {
-        this.defaultActive = "/"
+      this.menuList = menuList;
+      if (this.$route.matched[0].path) {
+        this.defaultActive = this.$route.matched[0].path;
+      } else {
+        this.defaultActive = "/";
       }
     }
   },
   created() {
-    this.init()
+    this.init();
   },
   mounted() {},
   beforeCreate() {},

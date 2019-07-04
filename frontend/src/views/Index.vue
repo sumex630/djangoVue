@@ -1,5 +1,5 @@
 <template>
-  <div class="index cpt-parent">
+  <div class="index cpt-s">
     <div class="">
       <el-row :gutter="20" type="flex">
         <el-col :span="8">
