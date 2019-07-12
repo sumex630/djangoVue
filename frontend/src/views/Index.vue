@@ -1,6 +1,6 @@
 <template>
   <div class="index cpt-s">
-    home
+    index 1111
   </div>
 </template>
 

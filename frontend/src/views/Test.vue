@@ -54,12 +54,6 @@ export default {
 };
 </script>
 <style lang='scss' scoped>
-.test {
-  // max-width: 1200px;
-  // margin: 0 auto;
-  // background: red;
-  // margin: 10px
-}
 .el-col {
   border-radius: 4px;
   margin-bottom: 20px;

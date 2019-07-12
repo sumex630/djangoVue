@@ -5,7 +5,7 @@
     </el-header>
     <el-container>
       <div>
-        <router-view name="aside"></router-view>
+        <router-view name="aside" v-if="isLeftNav"></router-view>
       </div>
       <el-main>
         <router-view></router-view>
@@ -20,6 +20,11 @@ export default {
   data() {
     return {};
   },
-  methods: {}
+  methods: {},
+  computed: {
+    isLeftNav() {
+      return this.$route.path == "/index" ? false : true
+    }
+  },
 };
 </script>

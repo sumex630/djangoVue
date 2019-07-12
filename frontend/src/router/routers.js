@@ -35,7 +35,7 @@ const routes = [{
     component: Home,
     meta: {
       icon: 'el-icon-menu',
-      title: "工作台",
+      title: "首页",
       isTopMenu: true,
     },
     children: [{
@@ -47,44 +47,10 @@ const routes = [{
           aside: LeftNav
         },
         meta: {
-          icon: 'el-icon-menu',
-          title: "首页",
+          title: "工作台",
           icon: 'el-icon-menu', // 图标样式class
         }
       },
-      {
-        path: '/mySet',
-        name: 'mySet',
-        components: {
-          default: MySettings,
-          top: TopNav,
-          aside: LeftNav
-        },
-        meta: {
-          icon: 'el-icon-menu',
-          icon: 'el-icon-menu',
-          title: "我的设置"
-        },
-        children: [{
-          path: 'plan',
-          component: Plan,
-          name: 'plan',
-          meta: {
-            icon: 'el-icon-menu',
-            icon: 'el-icon-menu',
-            title: "我的计划"
-          }
-        }, {
-          path: 'setting',
-          component: Setting,
-          name: 'Setting',
-          meta: {
-            icon: 'el-icon-menu',
-            icon: 'el-icon-menu',
-            title: "设置"
-          }
-        }]
-      }
     ]
   },
   {
@@ -121,6 +87,38 @@ const routes = [{
         icon: 'el-icon-menu',
         title: "企业认证"
       },
+    }, {
+      path: '/enterprise/mySet',
+      name: 'mySet',
+      components: {
+        default: MySettings,
+        top: TopNav,
+        aside: LeftNav
+      },
+      meta: {
+        icon: 'el-icon-menu',
+        icon: 'el-icon-menu',
+        title: "我的设置"
+      },
+      children: [{
+        path: 'plan',
+        component: Plan,
+        name: 'plan',
+        meta: {
+          icon: 'el-icon-menu',
+          icon: 'el-icon-menu',
+          title: "我的计划"
+        }
+      }, {
+        path: 'setting',
+        component: Setting,
+        name: 'Setting',
+        meta: {
+          icon: 'el-icon-menu',
+          icon: 'el-icon-menu',
+          title: "设置"
+        }
+      }]
     }]
   }
 ]
